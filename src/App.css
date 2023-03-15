@@ -43,7 +43,7 @@ html {
 
 img {
   padding-top: 5%;
-  width: 40%;
+  width: 60%;
   border-radius: 5px;
 }
 
@@ -82,5 +82,7 @@ p {
 
 .date {
   font-style: italic;
+  font-size: x-large;
+  font-weight: bold;
   color: green;
 }
