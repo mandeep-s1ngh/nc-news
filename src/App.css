@@ -97,7 +97,6 @@ p {
   font-style: normal;
   font-size: 22px;
   font-weight: bold;
-  color: darkblue;
 }
 
 .author {
@@ -105,4 +104,21 @@ p {
   font-size: large;
   font-weight: bold;
   color: #232b2b;
+}
+
+.comments {
+  margin-top: 10px;
+  border: 4px solid crimson;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+button {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: larger;
+  background-color: darkblue;
+  border-radius: 8px;
+  scroll-snap-align: start;
 }

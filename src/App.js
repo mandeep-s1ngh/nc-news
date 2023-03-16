@@ -5,6 +5,7 @@ import HomeImg from "./components/homeImg";
 import NavBar from "./components/navBar";
 import ArticleList from "./components/articleList";
 import SingleArticle from "./components/singleArticle";
+import ArticleComments from "./components/articleComments";
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
         <Route path="/" element={<HomeImg />} />
         <Route path="/articles" element={<ArticleList />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
+        <Route
+          path="/articles/:article_id/comments"
+          element={<ArticleComments />}
+        />
         <Route path="/topics" />
       </Routes>
     </div>

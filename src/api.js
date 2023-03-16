@@ -16,3 +16,10 @@ export const fetchArticleById = (article_id) => {
     return data.article;
   });
 };
+
+export const fetchComments = (article_id) => {
+  let path = `/articles/${article_id}/comments`;
+  return newsAPI.get(path).then(({ data }) => {
+    return data.comments;
+  });
+};
