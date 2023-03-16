@@ -20,7 +20,7 @@ function SingleArticle() {
         setIsLoading(false);
         setIsError(true);
       });
-  }, []);
+  }, [article_id]);
 
   if (isLoading) return <p>🥁 Loading!!!!</p>;
 
@@ -30,9 +30,10 @@ function SingleArticle() {
     <section className="tile" key={article.article_id}>
       <img src={article.article_img_url} alt="article img"></img>
       <h1>{article.title}</h1>
-      <p className="date">{article.created_at.substring(0, 10)}</p>
-      <p>Author: {article.author}</p>
+      <p className="date">Posted: {article.created_at.substring(0, 10)}</p>
+      <p className="author">Author: {article.author}</p>
       <p>{article.body}</p>
+      <p className="votes">Votes: {article.votes}</p>
     </section>
   );
 }

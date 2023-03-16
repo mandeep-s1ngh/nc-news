@@ -41,6 +41,12 @@ html {
   background-color: #ffa351ff;
 }
 
+.home-img {
+  padding-top: 5%;
+  width: 40%;
+  border-radius: 5px;
+}
+
 img {
   padding-top: 5%;
   width: 60%;
@@ -75,14 +81,28 @@ h1 {
 
 p {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 20px;
-  font-style: bold;
+  font-size: 22px;
+  font-weight: lighter;
   color: #201e20;
 }
 
 .date {
-  font-style: italic;
-  font-size: x-large;
+  font-style: normal;
+  font-size: larger;
   font-weight: bold;
   color: green;
+}
+
+.votes {
+  font-style: normal;
+  font-size: 22px;
+  font-weight: bold;
+  color: darkblue;
+}
+
+.author {
+  font-style: italic;
+  font-size: large;
+  font-weight: bold;
+  color: #232b2b;
 }
