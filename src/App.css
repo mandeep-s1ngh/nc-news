@@ -87,10 +87,10 @@ p {
 }
 
 .date {
-  font-style: normal;
-  font-size: larger;
+  font-style: italic;
+  font-size: large;
   font-weight: bold;
-  color: green;
+  color: #232b2b;
 }
 
 .votes {

@@ -23,3 +23,13 @@ export const fetchComments = (article_id) => {
     return data.comments;
   });
 };
+
+export const patchArticle = (article_id, numOfVotes) => {
+  return newsAPI
+    .patch(`/articles/${article_id}`, {
+      inc_votes: numOfVotes,
+    })
+    .then(({ data }) => {
+      return data;
+    });
+};
