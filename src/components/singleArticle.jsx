@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchArticleById } from "../api";
+import ArticleComments from "./articleComments";
 
 function SingleArticle() {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
+  const [showComments, setShowComments] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
@@ -34,6 +36,13 @@ function SingleArticle() {
       <p className="author">Author: {article.author}</p>
       <p>{article.body}</p>
       <p className="votes">Votes: {article.votes}</p>
+      <button type="button" onClick={() => setShowComments(true)}>
+        Show Comments
+      </button>
+      {showComments ? <ArticleComments /> : null}
+      <button type="button" onClick={() => setShowComments(false)}>
+        Hide Comments
+      </button>
     </section>
   );
 }
