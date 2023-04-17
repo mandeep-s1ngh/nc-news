@@ -22,6 +22,8 @@ Current working functionality:
 - Down vote on an article
 - Show the comments on an article
 - Hide the comments on an article
+- View a list of topics
+- View a list of articles associated with each topic
 
 ## <ins>Local Setup</ins>
 
