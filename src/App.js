@@ -6,6 +6,8 @@ import NavBar from "./components/navBar";
 import ArticleList from "./components/articleList";
 import SingleArticle from "./components/singleArticle";
 import ArticleComments from "./components/articleComments";
+import TopicsList from "./components/topicsList";
+import ArticlesByTopic from "./components/articlesByTopic";
 
 function App() {
   return (
@@ -20,7 +22,8 @@ function App() {
           path="/articles/:article_id/comments"
           element={<ArticleComments />}
         />
-        <Route path="/topics" />
+        <Route path="/topics" element={<TopicsList />} />
+        <Route path="/topics/:topic" element={<ArticlesByTopic />} />
       </Routes>
     </div>
   );

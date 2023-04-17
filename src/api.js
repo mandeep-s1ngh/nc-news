@@ -33,3 +33,9 @@ export const patchArticle = (article_id, numOfVotes) => {
       return data;
     });
 };
+
+export const fetchTopics = () => {
+  return newsAPI.get(`/topics`).then(({ data }) => {
+    return data.topics;
+  });
+};
