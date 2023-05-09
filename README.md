@@ -20,8 +20,7 @@ Current working functionality:
 - View an individual article
 - Up vote on an article
 - Down vote on an article
-- Show the comments on an article
-- Hide the comments on an article
+- Add a new comment on an article
 - View a list of topics
 - View a list of articles associated with each topic
 
