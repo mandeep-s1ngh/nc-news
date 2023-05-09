@@ -41,8 +41,9 @@ function ArticlesByTopic() {
                 <img src={item.article_img_url} alt="article img"></img>
                 <h1>{item.title}</h1>
               </Link>
-              <p className="author">Author: {item.author}</p>
-              <p className="date">{item.created_at.substring(0, 10)}</p>
+              <p className="date">
+                Posted: {new Date(item.created_at).toLocaleDateString("en-GB")}
+              </p>
             </section>
           );
         })}
