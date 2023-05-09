@@ -39,3 +39,10 @@ export const fetchTopics = () => {
     return data.topics;
   });
 };
+
+export const postComment = (article_id, commentData) => {
+  let path = `/articles/${article_id}/comments`;
+  return newsAPI.post(path, commentData).then(({ data }) => {
+    return data;
+  });
+};

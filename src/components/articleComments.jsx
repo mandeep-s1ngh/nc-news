@@ -13,7 +13,7 @@ function ArticleComments() {
     setIsError(false);
     fetchComments(article_id)
       .then((commentsFromApi) => {
-        setComments(commentsFromApi);
+        setComments(commentsFromApi.reverse());
         setIsLoading(false);
       })
       .catch((err) => {
@@ -27,12 +27,23 @@ function ArticleComments() {
   if (isError) return <p>❌ Error Fetching Information</p>;
 
   return comments.map((comment) => {
+    const options = {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    };
+    const date = new Date(comment.created_at).toLocaleString("en-GB", options);
+
     return (
       <section className="comments" key={comment.comment_id}>
-        <h1>{comment.author}</h1>
-        <p className="date">{comment.created_at.substring(0, 10)}</p>
+        <h1>
+          {comment.author} 🗓<span>&nbsp;</span>
+          <span className="date">{date}</span>
+        </h1>
         <p>{comment.body}</p>
-        <b>Votes: {comment.votes}</b>
+        <p>Votes: {comment.votes}</p>
         <p></p>
       </section>
     );

@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchArticleById, patchArticle } from "../api";
+import { fetchArticleById, patchArticle, fetchComments } from "../api";
 import ArticleComments from "./articleComments";
+import CommentForm from "./commentForm";
 
 function SingleArticle() {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
-  const [showComments, setShowComments] = useState(false);
+  const [comments, setComments] = useState([]);
+  const [commentsCount, setCommentsCount] = useState(0);
   const [userVote, setUserVote] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -18,6 +20,18 @@ function SingleArticle() {
       .then((data) => {
         setArticle(data);
         setIsLoading(false);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        setIsError(true);
+      });
+  }, [article_id]);
+
+  useEffect(() => {
+    fetchComments(article_id)
+      .then((data) => {
+        setComments(data);
+        setCommentsCount(data.length);
       })
       .catch((err) => {
         setIsLoading(false);
@@ -43,7 +57,9 @@ function SingleArticle() {
     <section className="tile" key={article.article_id}>
       <img src={article.article_img_url} alt="article img"></img>
       <h1>{article.title}</h1>
-      <p className="date">Posted: {article.created_at.substring(0, 10)}</p>
+      <p className="date">
+        Posted: {new Date(article.created_at).toLocaleDateString("en-GB")}
+      </p>
       <p className="author">Author: {article.author}</p>
       <p>{article.body}</p>
       {isError ? <p>{isError}</p> : null}
@@ -67,13 +83,11 @@ function SingleArticle() {
       </button>
       <br></br>
       <br></br>
-      <button type="button" onClick={() => setShowComments(true)}>
-        💬 Show Comments
-      </button>
-      {showComments ? <ArticleComments /> : null}
-      <button type="button" onClick={() => setShowComments(false)}>
-        🫣 Hide Comments
-      </button>
+      <CommentForm article_id={article_id} />
+      <br></br>
+      <br></br>
+      <p>Number of comments: {commentsCount}</p>
+      <ArticleComments />
     </section>
   );
 }
