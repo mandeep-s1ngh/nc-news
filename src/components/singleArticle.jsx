@@ -7,7 +7,6 @@ import CommentForm from "./commentForm";
 function SingleArticle() {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
-  const [comments, setComments] = useState([]);
   const [commentsCount, setCommentsCount] = useState(0);
   const [userVote, setUserVote] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +29,6 @@ function SingleArticle() {
   useEffect(() => {
     fetchComments(article_id)
       .then((data) => {
-        setComments(data);
         setCommentsCount(data.length);
       })
       .catch((err) => {

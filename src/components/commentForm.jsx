@@ -8,7 +8,6 @@ function CommentForm() {
     author: "",
     body: "",
   });
-  const [comments, setComments] = useState([]);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -18,9 +17,8 @@ function CommentForm() {
     setIsLoading(true);
     setIsError(false);
     postComment(article_id, commentData)
-      .then((commentFromApi) => {
+      .then(() => {
         setIsLoading(false);
-        setComments((prevComments) => [...prevComments, commentFromApi]);
         setCommentData({ author: "", body: "" });
         setIsSuccess(true);
       })
