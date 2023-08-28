@@ -4,40 +4,46 @@
 
 This project is part of my portfolio whilst enrolled on the NorthCoders Software Engineering bootcamp. <br>
 
-It is the front-end piece (created using [React](https://react.dev/)) for the back-end RESTful API created during the back-end phase of the bootcamp. <br>
+Essentially, It is a news website built using JavaScript & React & is the front-end piece for my back-end RESTful API that was created using Express & PostgreSQL during the back-end phase of the bootcamp.
+
+**Please note: The app is still a W.I.P as not all the endpoints from the API are connected to this app.**
+
+Current working functionality: View a list of articles, View an individual article, Up vote on an article, Down vote on an article, Add a new comment on an article, View a list of topics, View a list of articles associated with each topic.
+
+---
 
 ## <ins>Hosted Version</ins>
 
 Can be found here - https://news-control.netlify.app/
 
-## <ins>How to use</ins>
+---
 
-**Please note: The app is still a W.I.P as not all the endpoints from the API are connected to this app.**
+## <ins>Screenshots</ins>
 
-Current working functionality:
+![Homepage](./screenshots/homepage.png)
+![Article](./screenshots/article.png)
 
-- View a list of articles
-- View an individual article
-- Up vote on an article
-- Down vote on an article
-- Add a new comment on an article
-- View a list of topics
-- View a list of articles associated with each topic
+---
+
+## <ins>Tech Stack</ins>
+
+- JavaScript
+- React
+
+---
 
 ## <ins>Local Setup</ins>
 
-If you would like to run this project locally, please make sure you have at least **Node.js v18 installed**. You can then **_fork_** and **_clone_** the repo.
+1. To clone the repo, open up your terminal and run git clone https://github.com/mandeep-s1ngh/nc-news.git - once you have it cloned, move the folder to your usual directory for projects (if necessary).
 
-Once cloned, navigate into the root of the project, open it in the code editor of your choice and install the dependencies by running:
+2. You can then open up the folder in your code editor of choice and run `npm install` to install all the dependencies.
 
-`npm install`
+3. Then run `npm run dev`. This will start the app in development and keep it running in the background whilst you make any changes.
 
-You then run the app in development mode by running:
+---
 
-`npm start`
+## <ins>Back-end API Repo</ins>
 
-## <ins>API Repo</ins>
-
-https://github.com/mandeep-s1ngh/be-nc-news <br>
+https://github.com/mandeep-s1ngh/be-nc-news
 
 The README for this repo contains the link to the hosted version of the API as well as instructions on how to view the available list of endpoints (in a nicely presented layout) associated with it.
