@@ -27,6 +27,7 @@ Can be found here - https://news-control.netlify.app/
 
 ## <ins>Tech Stack</ins>
 
+- CSS
 - JavaScript
 - React
 
